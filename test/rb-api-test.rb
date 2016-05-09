@@ -11,6 +11,7 @@ module Mapnik
   attach_function :mapnik_map_get_srs, [:pointer], :string
   attach_function :mapnik_map_set_srs, [:pointer, :string], :int
   attach_function :mapnik_map_load, [:pointer, :string], :int
+  attach_function :mapnik_map_load_string, [:pointer, :string], :int
   attach_function :mapnik_map_zoom_all, [:pointer], :int
   attach_function :mapnik_map_render_to_file, [:pointer, :string], :int
 
@@ -20,5 +21,12 @@ module Mapnik
   mapnik_map_load(map, "./sample/stylesheet.xml")
   mapnik_map_zoom_all(map)
   mapnik_map_render_to_file(map, "rb-test.png")
+  mapnik_map_free(map)
+
+  style = IO.read('./sample/stylesheet_string.xml')
+  map = mapnik_map(256,256)
+  mapnik_map_load_string(map, style)
+  mapnik_map_zoom_all(map)
+  mapnik_map_render_to_file(map, "rb-test-string.png")
   mapnik_map_free(map)
 end
