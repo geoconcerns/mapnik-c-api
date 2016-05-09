@@ -1,6 +1,6 @@
 # mapnik-c-api
 
-[![Build Status](https://travis-ci.org/geoconcerns/mapnik-c-api.svg?branch=master)](https://travis-ci.org/springmeyer/mapnik-c-api)
+[![Build Status](https://travis-ci.org/geoconcerns/mapnik-c-api.svg?branch=master)](https://travis-ci.org/geoconcerns/mapnik-c-api)
 
 A C API to Mapnik
 
